@@ -1,0 +1,13 @@
+node_modules/*
+.bin/
+output/*
+dist/*
+.sass-cache/
+.idea/
+config.mine.js
+build/
+env\.mode
+.vscode/launch.json
+.DS_store
+.history
+.next/*

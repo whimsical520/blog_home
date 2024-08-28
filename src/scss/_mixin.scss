@@ -1,0 +1,145 @@
+/* var
+ * -------------------------- */
+
+ $hoverColor: #ffb200;
+
+/* mixin
+ * -------------------------- */
+%avoid_spacing {
+  font-size: 0;
+  letter-spacing: -4px;
+}
+
+%resume_avoid_spacing {
+  display: inline-block;
+  letter-spacing: normal;
+  vertical-align: top;
+}
+
+%fixed_width_content {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%fixed_width_multiLine_content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*
+ * @name:  inline-block
+ * @param: $alignment {string}  对齐类型
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+@mixin inline-block($alignment: middle, $support-for-ie: true) {
+  display: inline-block;
+  @if $alignment and $alignment != none {
+    vertical-align: $alignment;
+  }
+  @if $support-for-ie {
+    *vertical-align: auto;
+    *display: inline;
+    zoom: 1;
+  }
+}
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin text-overflow() {
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+ * @name:  inline-block
+ * @param: $alignment {string}  对齐类型
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+@mixin inline-block($alignment: middle, $support-for-ie: true) {
+  display: inline-block;
+  @if $alignment and $alignment != none {
+    vertical-align: $alignment;
+  }
+  @if $support-for-ie {
+    *vertical-align: auto;
+    *display: inline;
+    zoom: 1;
+  }
+}
+
+// border箭头
+// $color 箭头颜色
+// $width 箭头宽度
+// $direction 箭头方向
+@mixin triangle($direction: 'down', $width: 10px, $display: 'inline-block', $color: #666) {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  @if $display == 'inline-block' {
+    @include inline-block;
+  }
+  @if $display == 'absolute' {
+    position: absolute;
+  }
+
+  @if ($direction == 'up') or
+    ($direction == 'down') or
+    ($direction == 'right') or
+    ($direction == 'left')
+  {
+    border-width: $width;
+
+    @if $direction == 'up' {
+      border-style: dashed dashed solid;
+      border-color: transparent transparent $color;
+    } @else if $direction == 'left' {
+      border-style: dashed solid dashed dashed;
+      border-color: transparent $color transparent transparent;
+    } @else if $direction == 'right' {
+      border-style: dashed dashed dashed solid;
+      border-color: transparent transparent transparent $color;
+    } @else {
+      border-style: solid dashed dashed;
+      border-color: $color transparent transparent;
+    }
+  }
+
+  @if ($direction == 'right-up') or ($direction == 'left-up') {
+    border-top: $width solid;
+
+    @if $direction == 'right-up' {
+      border-left: $width solid transparent;
+    } @else if $direction == 'left-up' {
+      border-right: $width solid transparent;
+    }
+    _display: none;
+  } @else if ($direction == 'right-down') or ($direction == 'left-down') {
+    border-bottom: $width solid;
+
+    @if $direction == 'right-down' {
+      border-left: $width solid transparent;
+    } @else if $direction == 'left-down' {
+      border-right: $width solid transparent;
+    }
+    _display: none;
+  }
+}

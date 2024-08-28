@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "ES2015",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "allowJs": false,
+    "jsx": "preserve",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "~/*": [
+        // "src/client/*"
+        "./src/*"
+      ],
+      "~@/*": [
+        // "src/client/components/*"
+        "src/components/*"
+      ],
+      "@server/*": [
+        "src/server/*"
+      ],
+      "@client/*": [
+        "src/client/*"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
