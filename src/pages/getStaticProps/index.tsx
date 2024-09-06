@@ -1,25 +1,18 @@
 import React from 'react'
 import fetchTdkMsg from '~/js/handlers/TdkMsg'
 
-
 const GetStaticProps: React.FC<any> = (props) => {
   console.log('props:', props)
-  return (
-    <div>this is getStaticProps</div>
-  )
+  return <div>this is getStaticProps</div>
 }
 
 export const getStaticProps = async () => {
   const now = Date.now()
   try {
-    const [
-      tdkMsg,
-    ] = await Promise.all([
-      fetchTdkMsg('index', 0)
-    ])
+    const [tdkMsg] = await Promise.all([fetchTdkMsg('index', 0)])
     return {
       props: {
-        tdkMsg,
+        tdkMsg
       }
     }
   } catch (error) {
@@ -28,8 +21,8 @@ export const getStaticProps = async () => {
     console.debug(error)
     return {
       props: {
-        tdkMsg: null,
-      },
+        tdkMsg: null
+      }
     }
   }
 }

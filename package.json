@@ -2,11 +2,25 @@
   "name": "nextjs-trpc",
   "version": "0.1.0",
   "private": true,
+  "eslintConfig": {
+    "root": true
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "eslint": "eslint --ext=jsx,ts,tsx ./",
+    "eslint:fix": "eslint --fix --ext=jsx,ts,tsx ./",
+    "prettier": "prettier --write ./**"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "none",
+    "printWidth": 100
   },
   "dependencies": {
     "@trpc/client": "^11.0.0-rc.421",
@@ -20,11 +34,18 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0",
+    "eslint": "8.16.0",
     "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "4.0.0",
     "postcss": "^8",
+    "prettier": "2.6.2",
+    "prettier-plugin-organize-imports": "^4.0.0",
     "sass": "^1.77.8",
+    "strip-ansi": "6.0.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "5.1.6"
   }
 }

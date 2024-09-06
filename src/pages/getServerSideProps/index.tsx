@@ -3,23 +3,17 @@ import fetchBannerInfo from 'src/js/handlers/BannerInfo'
 
 const GetServerSideProps: React.FC = (props) => {
   console.log('props:', props)
-  return (
-    <div>this is getServerSideProps</div>
-  )
+  return <div>this is getServerSideProps</div>
 }
 
 export const getServerSideProps = async () => {
   try {
-    const [
-      bannerInfoList,
-    ] = await Promise.all([
-      fetchBannerInfo(),
-    ])
+    const [bannerInfoList] = await Promise.all([fetchBannerInfo()])
     return {
       props: {
         now: Date.now(),
-        bannerInfoList,
-      },
+        bannerInfoList
+      }
     }
   } catch (error) {
     // TODO:
@@ -27,8 +21,8 @@ export const getServerSideProps = async () => {
     console.debug(error)
     return {
       props: {
-        bannerInfoList: [],
-      },
+        bannerInfoList: []
+      }
     }
   }
 }

@@ -1,3 +1,5 @@
+@import '../../scss/var.scss';
+
 .wk-header--container {
   position: fixed;
   top: 0;
@@ -6,8 +8,16 @@
   align-items: center;
   justify-content: space-between;
   height: 75px;
-  background: rgba(255, 255, 255, .95);
-  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+  z-index: 100;
+
+  &.show-bg {
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+  }
+
+  &:hover {
+    background: #fff;
+  }
 
   .logo {
     width: 250px;
@@ -18,10 +28,14 @@
   }
 
   .wk-header-menus {
+    position: absolute;
     display: flex;
-
+    justify-content: center;
+    left: 50%;
     width: 980px;
     height: 100%;
+    transform: translateX(-50%);
+    animation: show-menu ease-in-out .5s;
     
     &--item {
       position: relative;
@@ -33,7 +47,7 @@
       font-size: 16px;
 
       &:hover {
-        color: #fe9600;
+        color: $primaryColor;
         cursor: pointer;
 
         &::after {
@@ -49,7 +63,7 @@
         width: 100%;
         max-width: 0;
         height: 6px;
-        background: #fe9600;
+        background: $primaryColor;
         content: '';
         transition: max-width ease-in-out .3s;
       }
@@ -58,5 +72,25 @@
         margin-right: 5px;
       }
     }
+  }
+
+  .scroll-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: $primaryColor;
+    transition: all ease-in-out .3s;
+  }
+}
+
+@keyframes show-menu {
+  from {
+    opacity: 0;
+    transform: translateX(-48%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
   }
 }

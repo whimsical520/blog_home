@@ -1,0 +1,66 @@
+.introCard-box {
+  position: relative;
+  width: 257px;
+  height: 160px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+  overflow: hidden;
+  border-radius: 10px;
+
+  .introCard-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease-in-out .3s;
+  }
+
+  .introCard-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .4);
+    transition: all ease-in-out .3s;
+    opacity: 0;
+
+    .title {
+      margin-top: 30px;
+      color: #fff;
+      width: 100%;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+      background: #000;
+      transform: translateX(-100%);
+      transition: all ease-in-out .3s;
+    }
+    
+    .subTitle {
+      font-style: italic;
+      font-size: 12px;
+      position: relative;
+      color: rgb(199, 198, 198);
+      padding: 20px 20px 20px;
+      text-align: center;
+      transform: translateX(100%);
+      transition: all ease-in-out .3s;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .introCard-shadow {
+      opacity: 1;
+
+      .title, .subTitle {
+        transform: translateX(0);
+      }
+    }
+
+    .introCard-thumb {
+      transform: scale(1.3);
+    }
+  }
+}

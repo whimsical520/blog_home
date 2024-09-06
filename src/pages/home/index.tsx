@@ -1,24 +1,27 @@
-import React from 'react'
-import Head from 'next/head'
 import type { GetStaticProps } from 'next'
+import { FigureBox } from './figureBox'
+import './index.scss'
+import { TopDown } from './topDown'
+import { Wave } from './wave'
+import { Content } from './content'
 
 const Home = () => {
   return (
     <>
-      <Head>
-       
-      </Head>
-      <div className='ui-page-main ui-new-layout'>
-        <figure>
-          
-        </figure>
+      <div className='home-page-main'>
+        <div className='home-page-top'>
+          <FigureBox />
+          <TopDown />
+          <Wave />
+        </div>
+        <Content />
       </div>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps<any> = async () => {
-  return {props: {}}
+  return { props: {} }
 }
 
 export default Home

@@ -1,8 +1,7 @@
-import React from 'react'
-
 const GetStaticPathsPage = ({ post }: { post: string }) => {
   return (
-    <div>this is getStaticPaths
+    <div>
+      this is getStaticPaths
       <h1>Post: {post}</h1>
     </div>
   )
@@ -11,17 +10,17 @@ const GetStaticPathsPage = ({ post }: { post: string }) => {
 export const getStaticPaths = () => {
   const paths = new Array(10).fill(0).map((_, i) => ({
     params: { id: i + 1 + '' }
-  }));
+  }))
 
-  console.log('paths', paths);
+  console.log('paths', paths)
 
-  return { paths, fallback: true };
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
-  console.log('params', params);
+  console.log('params', params)
 
-  return { props: { post: `post ${params.id}` } };
+  return { props: { post: `post ${params.id}` } }
 }
 
 export default GetStaticPathsPage

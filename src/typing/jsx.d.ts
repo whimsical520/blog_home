@@ -1,4 +1,4 @@
-declare module JSX {
+declare namespace JSX {
   interface IntrinsicElements {
     foo: { bar?: boolean }
   }

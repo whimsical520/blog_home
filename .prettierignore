@@ -18,3 +18,10 @@ yarn.lock
 *.jpg
 *.jpeg
 *.pug
+*.ttf
+*.woff
+*.woff2
+.npmrc
+.env.*
+env.*
+.next/**

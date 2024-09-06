@@ -1,9 +1,9 @@
+import '@/scss/common.scss'
 import '@/scss/global.scss'
 import '@/scss/iconfont/iconfont.css'
-import '@/scss/common.scss'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import {Header} from '~/components/header'
+import { Header } from '~/components/header'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name='description'
         ></meta>
       </Head>
-      <Header/>
+      <Header />
       <Component {...pageProps} />
     </>
   )

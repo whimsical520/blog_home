@@ -1,0 +1,113 @@
+.home-page-main {
+  position: relative;
+
+  .home-page-top {
+    position: relative;
+    .top-down {
+      position: absolute;
+      bottom: 50px;
+      left: calc(50% - 14px);
+      cursor: pointer;
+      z-index: 5;
+      animation: topDown 1s ease-in-out infinite;
+  
+      .iconfont {
+        font-size: 30px;
+        color: #fff;
+      }
+    }
+  
+    .canvasWave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 65px;
+      z-index: 5;
+    }
+  }
+}
+
+#centerbg {
+  width: 100%;
+  background-image: url('../../images/home/bg-01.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  z-index: -1;
+  
+  .focusinfo {
+    position: relative;
+    max-width: 800px;
+    padding: 0 10px;
+    top: 49.3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 99;
+    transition: all ease .4s;
+
+    .header-box {
+      img {
+        width: 130px;
+        height: auto;
+        border-radius: 100%;
+        opacity: 1;
+        padding: 5px;
+        box-shadow: inset 0 0 10px #000;
+        transform: rotate(0deg);
+        transition: all ease 1s;
+      }
+    }
+
+    .header-info {
+      width: 63%;
+      margin: auto;
+      font-size: 16px;
+      color: #eaeadf;
+      background: rgba(0, 0, 0, .5);
+      padding: 15px;
+      margin-top: 22px;
+      letter-spacing: 0;
+      line-height: 30px;
+      border-radius: 10px;
+      box-sizing: initial;
+      white-space: nowrap;
+    }
+  }
+}
+
+.site-content {
+  max-width: 800px;
+  padding: 0 10px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, .8);
+
+  .theme-lists {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 40px 0;
+  }
+
+  .case-lists {
+    .caseCard-box {
+      margin: 30px 0 40px 0;
+    }
+  }
+}
+
+@keyframes topDown {
+  0% {
+    bottom: 50px;
+  }
+
+  50% {
+    bottom: 40px;
+  }
+
+  100% {
+    bottom: 50px;
+  }
+}
