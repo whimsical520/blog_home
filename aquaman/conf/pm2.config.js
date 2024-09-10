@@ -9,10 +9,7 @@ module.exports = {
       autorestart: true,
       max_memory_restart: '512M',
       instances: 1,
-      no_daemon: true,
-      env: {
-        BRANCH_ENV
-      }
+      no_daemon: true
     }
   ]
 }
