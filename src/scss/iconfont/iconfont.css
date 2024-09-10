@@ -14,23 +14,23 @@
 }
 
 .icon-tag:before {
-  content: "\e887";
+  content: '\e887';
 }
 
 .icon-ellipsis:before {
-  content: "\eb10";
+  content: '\eb10';
 }
 
 .icon-time:before {
-  content: "\e7ac";
+  content: '\e7ac';
 }
 
 .icon-introduce:before {
-  content: "\e643";
+  content: '\e643';
 }
 
 .icon-anchorPoint:before {
-  content: "\e7a4";
+  content: '\e7a4';
 }
 
 .icon-checklist:before {

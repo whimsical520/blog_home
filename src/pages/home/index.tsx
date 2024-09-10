@@ -1,9 +1,9 @@
 import type { GetStaticProps } from 'next'
+import { Content } from './content'
 import { FigureBox } from './figureBox'
 import './index.scss'
 import { TopDown } from './topDown'
 import { Wave } from './wave'
-import { Content } from './content'
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps<any> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   return { props: {} }
 }
 

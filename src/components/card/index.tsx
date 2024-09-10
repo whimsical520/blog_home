@@ -11,11 +11,7 @@ export const Card: React.FC<CardProps> = (props) => {
 
   return (
     <div className='wk-card'>
-      {
-        title && <div className='wk-card-title'>
-          {title}
-        </div>
-      }
+      {title && <div className='wk-card-title'>{title}</div>}
       <div className='wk-card-content'>{children}</div>
     </div>
   )

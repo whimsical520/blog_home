@@ -15,7 +15,7 @@ interface CaseCardProps {
 
 export const CaseCard: React.FC<CaseCardProps> = (props) => {
   const { thumb, date, title, tags, desc, right } = props
-  
+
   const thumbBox = useMemo(() => {
     return (
       <div className='caseCard-thumb'>
@@ -27,17 +27,25 @@ export const CaseCard: React.FC<CaseCardProps> = (props) => {
   const introBox = useMemo(() => {
     return (
       <div className={`caseCard-intro ${right ? 'right' : ''}`}>
-        <p className='date'><i className='iconfont icon-time' />{date}</p>
+        <p className='date'>
+          <i className='iconfont icon-time' />
+          {date}
+        </p>
         <h3 className='title textOverflow'>{title}</h3>
-        {tags?.length && <div className='tags'>
+        {tags?.length && (
+          <div className='tags'>
             {tags.map((i, n) => {
               return (
-                <span className='tag-item' key={`tag-${n}`}><i className='iconfont icon-tag' />{i.label}</span>
+                <span className='tag-item' key={`tag-${n}`}>
+                  <i className='iconfont icon-tag' />
+                  {i.label}
+                </span>
               )
             })}
-          </div>}
-          <p className='desc'>{desc}</p>
-          <i className='iconfont icon-ellipsis ellipsis' />
+          </div>
+        )}
+        <p className='desc'>{desc}</p>
+        <i className='iconfont icon-ellipsis ellipsis' />
       </div>
     )
   }, [])

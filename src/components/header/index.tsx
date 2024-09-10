@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
   const listenToScroll = useCallback(() => {
     const scrollTop = document.documentElement.scrollTop
 
-    setScrollProgress(Math.ceil((scrollTop * document.body.clientWidth / window.screen.height) ))
+    setScrollProgress(Math.ceil((scrollTop * document.body.clientWidth) / window.screen.height))
     setHasScroll(scrollTop > 0)
   }, [])
 
@@ -49,20 +49,25 @@ export const Header: React.FC = () => {
   }, [])
   console.log('scrollProgress:', scrollProgress)
   return (
-    <div className={`wk-header--container ${hasScroll ? 'show-bg' : ''}`} onMouseEnter={() => setMouseEntry(true)} onMouseLeave={() => setMouseEntry(false)}>
-      <div className='scroll-progress' style={{width: scrollProgress}} />
+    <div
+      className={`wk-header--container ${hasScroll ? 'show-bg' : ''}`}
+      onMouseEnter={() => setMouseEntry(true)}
+      onMouseLeave={() => setMouseEntry(false)}
+    >
+      <div className='scroll-progress' style={{ width: scrollProgress }} />
       <div className='logo' />
-      {showMenu &&  <ul className='wk-header-menus'>
-        {menus.map((i, n) => {
-          return (
-            <li className='wk-header-menus--item' key={`menu-${n}`} >
-              <i className={`iconfont ${i.icon}`} />
-              <span className='title'>{i.title}</span>
-            </li>
-          )
-        })}
-      </ul>}
-     
+      {showMenu && (
+        <ul className='wk-header-menus'>
+          {menus.map((i, n) => {
+            return (
+              <li className='wk-header-menus--item' key={`menu-${n}`}>
+                <i className={`iconfont ${i.icon}`} />
+                <span className='title'>{i.title}</span>
+              </li>
+            )
+          })}
+        </ul>
+      )}
     </div>
   )
 }

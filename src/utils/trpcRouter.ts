@@ -6,6 +6,7 @@ interface CreateNextContextOptions {}
 export async function createTRPCContext(opts: CreateNextContextOptions) {
   // getServerSession 是从 @/server/auth 中导入的，与nextauth相关
   // const session = await getServerSession()
+  console.log('opts:', opts)
   const session = { user: { id: 1, name: '张三' } }
   return { session }
 }
