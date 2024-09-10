@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TopDown: React.FC = () => {
+const TopDown: React.FC = () => {
   return (
     <div className='top-down'>
       <span>
@@ -9,3 +9,5 @@ export const TopDown: React.FC = () => {
     </div>
   )
 }
+
+export default TopDown

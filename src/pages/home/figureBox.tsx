@@ -1,7 +1,7 @@
 import React from 'react'
 import avatarIcon from '../../images/avatar.jpg'
 
-export const FigureBox: React.FC = () => {
+const FigureBox: React.FC = () => {
   return (
     <figure id='centerbg'>
       <div className='focusinfo'>
@@ -15,3 +15,5 @@ export const FigureBox: React.FC = () => {
     </figure>
   )
 }
+
+export default FigureBox

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 
-export const Wave: React.FC = () => {
+const Wave: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const drawWava = useCallback(() => {
@@ -64,3 +64,5 @@ export const Wave: React.FC = () => {
 
   return <canvas className='canvasWave' ref={canvasRef} />
 }
+
+export default Wave

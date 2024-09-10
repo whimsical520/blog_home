@@ -1,9 +1,9 @@
 import type { GetStaticProps } from 'next'
-import { Content } from './content'
-import { FigureBox } from './figureBox'
+import Content from './content'
+import FigureBox from './figureBox'
 import './index.scss'
-import { TopDown } from './topDown'
-import { Wave } from './wave'
+import TopDown from './topDown'
+import Wave from './wave'
 
 const Home = () => {
   return (

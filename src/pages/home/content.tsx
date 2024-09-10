@@ -8,7 +8,7 @@ import miniprogrameThumb from '~/images/thumbs/miniprogram-thumb.jpeg'
 import pcThumb from '~/images/thumbs/pc-thumb.jpeg'
 import webThumb from '~/images/thumbs/web-thumb.jpeg'
 
-export const Content: React.FC = () => {
+const Content: React.FC = () => {
   return (
     <div className='site-content'>
       <Card
@@ -67,3 +67,5 @@ export const Content: React.FC = () => {
     </div>
   )
 }
+
+export default Content
